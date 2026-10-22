@@ -104,5 +104,5 @@ class SmartHomeHandler(SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     print(f"🏠 丰和园 3D 全屋智能控制中心已启动: http://127.0.0.1:{PORT}")
-    server = ThreadingHTTPServer(("127.0.0.1", PORT), SmartHomeHandler)
+    server = ThreadingHTTPServer((HOST, PORT), SmartHomeHandler)
     server.serve_forever()

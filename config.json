@@ -2,13 +2,21 @@
   "project": "fengheyuan-smart-home-3d",
   "homeName": "丰和园",
   "server": {
-    "host": "127.0.0.1",
+    "host": "0.0.0.0",
     "port": 8765
   },
   "bridge": {
     "source": "home_bridge.swift",
     "binary": "home_bridge",
-    "rooms": ["客厅", "书房", "主卧", "儿童房", "卫生间", "厨房", "Default Room"]
+    "rooms": [
+      "客厅",
+      "书房",
+      "主卧",
+      "儿童房",
+      "卫生间",
+      "厨房",
+      "Default Room"
+    ]
   },
   "defaults": {
     "viewMode": "3d",
