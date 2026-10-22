@@ -1,0 +1,234 @@
+/* ============================================================
+ * 丰和园 · 3D 全屋智能控制中心样式 (Smart Home HUD & 3D Pins)
+ * ============================================================ */
+
+/* 顶栏智控徽章与同步按钮 */
+.sh-top-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+  padding: 3px 6px;
+  background: rgba(24, 28, 36, 0.06);
+  border-radius: 9px;
+}
+.sh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 30px;
+  padding: 0 11px;
+  border-radius: 7px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: #fff;
+  color: #262522;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.sh-btn:hover { background: #f3f1ec; }
+.sh-btn.active {
+  background: linear-gradient(135deg, #1f6feb, #1554b8);
+  color: #fff;
+  border-color: #1554b8;
+  box-shadow: 0 2px 8px rgba(31, 111, 235, 0.32);
+}
+.sh-btn.live-on {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #fff;
+  border-color: #15803d;
+}
+.sh-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #9ca3af;
+}
+.sh-btn.live-on .sh-dot {
+  background: #86efac;
+  box-shadow: 0 0 6px #4ade80;
+}
+
+/* 3D 房间悬浮智能传感器胶囊 */
+.rlabel.sh-room-card {
+  pointer-events: auto !important;
+  cursor: pointer;
+  padding: 6px 11px;
+  border-radius: 12px;
+  background: rgba(22, 25, 33, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.18s ease, border-color 0.18s ease;
+  min-width: 112px;
+  text-align: left;
+}
+.rlabel.sh-room-card:hover {
+  transform: translate(-50%, -105%) scale(1.05);
+  border-color: rgba(96, 165, 250, 0.7);
+}
+.rlabel.sh-room-card.lit {
+  border-color: rgba(251, 191, 36, 0.85);
+  box-shadow: 0 6px 20px rgba(251, 191, 36, 0.28);
+}
+.sh-rc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+.sh-rc-badge {
+  font-size: 10.5px;
+  padding: 1px 6px;
+  border-radius: 99px;
+  background: rgba(255,255,255,0.12);
+  color: #cbd5e1;
+}
+.rlabel.sh-room-card.lit .sh-rc-badge {
+  background: rgba(251, 191, 36, 0.25);
+  color: #fde68a;
+}
+.sh-rc-sensors {
+  margin-top: 3px;
+  font-size: 10.5px;
+  color: #cbd5e1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  line-height: 1.35;
+}
+
+/* 3D 场景内单个设备悬浮开关气泡 (CSS2DObject) */
+.sh-dev-pin {
+  pointer-events: auto !important;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(30, 34, 44, 0.78);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 11px;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.28);
+  transform: translate(-50%, -50%);
+  transition: all 0.16s ease;
+  user-select: none;
+  white-space: nowrap;
+}
+.sh-dev-pin:hover {
+  transform: translate(-50%, -56%) scale(1.08);
+  background: rgba(30, 41, 59, 0.95);
+}
+.sh-dev-pin.on {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.95), rgba(217, 119, 6, 0.95));
+  color: #fff;
+  border-color: #fde68a;
+  box-shadow: 0 0 14px rgba(251, 191, 36, 0.65);
+}
+.sh-dev-pin.type-curtain.on {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.92), rgba(2, 132, 199, 0.92));
+  border-color: #bae6fd;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+}
+.sh-dev-pin.type-outlet.on, .sh-dev-pin.type-climate.on {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.92), rgba(5, 150, 105, 0.92));
+  border-color: #a7f3d0;
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.5);
+}
+
+/* 右侧 HomeKit 风格全屋智控抽屉 */
+.sh-panel-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sh-status-banner {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.sh-status-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+.sh-status-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  font-size: 11.5px;
+  color: #cbd5e1;
+}
+.sh-scene-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7px;
+}
+.sh-scene-btn {
+  padding: 8px 10px;
+  border-radius: 9px;
+  border: 1px solid #e5e0d5;
+  background: #faf8f4;
+  cursor: pointer;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2c2a26;
+  transition: all 0.15s;
+}
+.sh-scene-btn:hover {
+  background: #f0ece3;
+  border-color: #cbbba0;
+}
+.sh-dev-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7px;
+}
+.sh-dev-tile {
+  padding: 8px 9px;
+  border-radius: 10px;
+  border: 1px solid #e6e2d8;
+  background: #f7f5f0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  transition: all 0.16s ease;
+}
+.sh-dev-tile:hover { border-color: #b8b0a0; }
+.sh-dev-tile.on {
+  background: #fffbeb;
+  border-color: #f59e0b;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.14);
+}
+.sh-dev-tile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1f2937;
+}
+.sh-dev-tile-sub {
+  font-size: 10.5px;
+  color: #6b7280;
+}
+.sh-dev-tile.on .sh-dev-tile-sub {
+  color: #b45309;
+  font-weight: 600;
+}

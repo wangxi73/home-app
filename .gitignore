@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Compiled binaries & runtime logs (rebuilt automatically via start.sh / server.py)
+home_bridge
+*.log
+/tmp/
